@@ -12,9 +12,6 @@ const Cabecalho = (props) => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/array">Array</Nav.Link>
-              <Nav.Link href="/objeto">Objeto</Nav.Link>
-              <Nav.Link href="/carro">Carro</Nav.Link>
               <Nav.Link href="/filmes">Filmes</Nav.Link>
             </Nav>
           </Navbar.Collapse>
