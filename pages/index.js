@@ -1,19 +1,20 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Pagina from "../components/Pagina";
-import Container from "react-bootstrap/Container";
+import { Col, Row } from "react-bootstrap";
 
 const Home = () => {
+  const array = ["oi"];
   return (
-    <>
-      <Pagina titulo="Página Inicial">
-        <h2>Hello World</h2>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-      </Pagina>
-    </>
+    <Pagina titulo="Página Inicial">
+      <Row>
+        {array.map((item) => (
+          <Col>
+            <p>{item}</p>
+          </Col>
+        ))}
+      </Row>
+    </Pagina>
   );
 };
 

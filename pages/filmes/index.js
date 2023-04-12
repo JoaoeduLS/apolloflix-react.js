@@ -26,7 +26,11 @@ const index = () => {
         {filmes.map((item) => (
           <Col key={item.id} md={3}>
             <Card>
-              <Card.Img variant="top" src={item.poster_path} alt={item.title} />
+              <Card.Img
+                variant="top"
+                src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                alt={item.title}
+              />
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>
