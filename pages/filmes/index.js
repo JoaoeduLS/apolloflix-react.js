@@ -15,10 +15,16 @@ const index = () => {
   const [filmes, setFilmes] = useState([]);
 
   useEffect(() => {
-    apiFilmes.get("/movie/popular/").then((resultado) => {
-      setFilmes(resultado.data.results);
-    });
+    apiFilmes
+      .get(`/movie/popular/`)
+      .then((resultado) => {
+        setFilmes(resultado.data.results);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
+  // Formatar a Data
 
   return (
     <Pagina titulo="Filmes">
@@ -34,7 +40,10 @@ const index = () => {
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>
-                  Ano: <strong>{item.release_date}</strong>
+                  Lançamento-
+                  <strong>
+                    {new Date(item.release_date).toLocaleDateString()}
+                  </strong>
                 </Card.Text>
                 <OverlayTrigger
                   trigger="click"

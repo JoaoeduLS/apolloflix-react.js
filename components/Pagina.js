@@ -7,16 +7,19 @@ const Pagina = (props) => {
   return (
     <>
       <Cabecalho />
-      <div className="bg-secondary py-3 text-white text-center mb-3">
+      <div
+        className="py-3 text-white text-center mb-3"
+        style={{ backgroundColor: "#d3d3d3" }}
+      >
         <Container>
-          <h1>{props.titulo}</h1>
+          <h1 className="text-black">{props.titulo}</h1>
         </Container>
       </div>
       <Container className="mb-5 pb-3">{props.children}</Container>
 
       <div
-        style={{ width: "100%" }}
-        className="bg-secondary position-static bottom-0 py-3 text-white text-center"
+        style={{ width: "100%", backgroundColor: "#d3d3d3" }}
+        className=" position-static bottom-0 py-3 text-black text-center"
       >
         <p>Todos os direitos reservados®</p>
       </div>

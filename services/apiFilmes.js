@@ -1,4 +1,5 @@
 import axios from "axios";
+import * as tmdb from "themoviedb-javascript-library";
 
 const apiFilmes = axios.create({
   baseURL: "https://api.themoviedb.org/3",
