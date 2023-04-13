@@ -13,7 +13,7 @@ import {
 
 const index = () => {
   const [filmes, setFilmes] = useState([]);
-
+  const image_path = "https://image.tmdb.org/t/p/w500/";
   useEffect(() => {
     apiFilmes
       .get(`/movie/popular/`)
@@ -24,7 +24,6 @@ const index = () => {
         console.error(error);
       });
   }, []);
-  // Formatar a Data
 
   return (
     <Pagina titulo="Filmes">
@@ -34,7 +33,7 @@ const index = () => {
             <Card>
               <Card.Img
                 variant="top"
-                src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                src={`${image_path}${item.poster_path}`}
                 alt={item.title}
               />
               <Card.Body>
