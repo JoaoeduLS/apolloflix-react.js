@@ -13,11 +13,16 @@ import {
 
 const index = () => {
   const [filmes, setFilmes] = useState([]);
-
+  const image_path = "https://image.tmdb.org/t/p/w500/";
   useEffect(() => {
-    apiFilmes.get("/movie/popular").then((resultado) => {
-      setFilmes(resultado.data.results);
-    });
+    apiFilmes
+      .get(`/movie/popular/`)
+      .then((resultado) => {
+        setFilmes(resultado.data.results);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
   return (
@@ -26,11 +31,18 @@ const index = () => {
         {filmes.map((item) => (
           <Col key={item.id} md={3}>
             <Card>
-              <Card.Img variant="top" src={item.poster_path} alt={item.title} />
+              <Card.Img
+                variant="top"
+                src={`${image_path}${item.poster_path}`}
+                alt={item.title}
+              />
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>
-                  Ano: <strong>{item.release_date}</strong>
+                  Lançamento-
+                  <strong>
+                    {new Date(item.release_date).toLocaleDateString()}
+                  </strong>
                 </Card.Text>
                 <OverlayTrigger
                   trigger="click"
