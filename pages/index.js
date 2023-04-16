@@ -4,18 +4,7 @@ import Pagina from "../components/Pagina";
 import { Col, Row } from "react-bootstrap";
 
 const Home = () => {
-  const array = ["oi"];
-  return (
-    <Pagina titulo="Página Inicial">
-      <Row>
-        {array.map((item) => (
-          <Col>
-            <p>{item}</p>
-          </Col>
-        ))}
-      </Row>
-    </Pagina>
-  );
+  return <Pagina titulo="Página Inicial"></Pagina>;
 };
 
 export default Home;

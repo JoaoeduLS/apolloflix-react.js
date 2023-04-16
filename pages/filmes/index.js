@@ -16,7 +16,9 @@ const index = () => {
   const image_path = "https://image.tmdb.org/t/p/w500/";
   useEffect(() => {
     apiFilmes
-      .get(`/movie/popular/`)
+      .get(
+        `/movie/popular/?api_key=68ab855709b33024448d00dc819063c4&language=pt-BR`
+      )
       .then((resultado) => {
         setFilmes(resultado.data.results);
       })
@@ -49,7 +51,7 @@ const index = () => {
                   placement="right"
                   overlay={
                     <Popover id="popover-basic">
-                      <Popover.Header as="h3">Descrição</Popover.Header>
+                      <Popover.Header as="h3">Resumo</Popover.Header>
                       <Popover.Body>{item.overview}</Popover.Body>
                     </Popover>
                   }
