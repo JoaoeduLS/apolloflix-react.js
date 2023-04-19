@@ -118,3 +118,7 @@ const Home = () => {
   carros.map((carro, index) => <p key={index}>{carro}</p>);
 }
 ```
+
+#### clona e tira a oringen do repositorio
+
+- git remote remove origin

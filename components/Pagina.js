@@ -8,7 +8,7 @@ const Pagina = (props) => {
     <>
       <Cabecalho />
       <div
-        className="py-3 text-white text-center mb-3"
+        className="py-3 text-white text-center mb-2"
         style={{ backgroundColor: "#d3d3d3" }}
       >
         <Container>
@@ -19,7 +19,7 @@ const Pagina = (props) => {
 
       <div
         style={{ width: "100%", backgroundColor: "#d3d3d3" }}
-        className=" position-static bottom-0 py-3 text-black text-center"
+        className=" position-static bottom-0 py-2 text-black text-center"
       >
         <p>Todos os direitos reservados®</p>
       </div>
