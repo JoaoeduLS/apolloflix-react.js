@@ -22,9 +22,9 @@ const index = () => {
 
   return (
     <Pagina titulo="Filmes">
-      <Row>
+      <Row className="px-1 mx-1">
         {filmes.map((item) => (
-          <Col key={item.id} md={3}>
+          <Col key={item.id} md={3} className="mb-4">
             <Card>
               <Card.Img
                 variant="top"
@@ -51,7 +51,7 @@ const index = () => {
                 >
                   <Button variant="primary">Detalhes</Button>
                 </OverlayTrigger> */}
-                <Link href={"/filmes/" + item.id} className="btn btn-danger">
+                <Link href={"/filmes/" + item.id} className="btn btn-dark">
                   Detalhes
                 </Link>
               </Card.Body>
