@@ -4,8 +4,8 @@ import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Pagina = (props) => {
-  return (
-    <>
+  return (<>
+    <div style={{backgroundColor:"black"}}>
       <Cabecalho />
       <div
         className="py-3 text-white text-center mb-2"
@@ -23,6 +23,7 @@ const Pagina = (props) => {
       >
         <p>Todos os direitos reservados®</p>
       </div>
+    </div>
     </>
   );
 };
