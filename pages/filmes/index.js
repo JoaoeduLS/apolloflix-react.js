@@ -5,21 +5,7 @@ import apiFilmes from "../../services/apiFilmes";
 import { Row, Col, Card } from "react-bootstrap";
 import Link from "next/link";
 
-const index = () => {
-  const [filmes, setFilmes] = useState([]);
-
-  useEffect(() => {
-    apiFilmes
-      .get(`/movie/popular/`)
-      .then((resultado) => {
-        setFilmes(resultado.data.results);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-  // Formatar a Data
-
+const index = ({ filmes }) => {
   return (
     <Pagina titulo="Filmes">
       <Row className="px-1 mx-1">
@@ -64,3 +50,11 @@ const index = () => {
 };
 
 export default index;
+// Formatar a Data
+export async function getServerSideProps(context) {
+  const resultado = await apiFilmes.get(`/movie/popular/?language=pt-BR`);
+  const filmes = await resultado.data.results;
+  return {
+    props: { filmes }, // will be passed to the page component as props
+  };
+}
