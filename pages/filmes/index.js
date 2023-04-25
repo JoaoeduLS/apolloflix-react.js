@@ -5,7 +5,7 @@ import apiFilmes from "../../services/apiFilmes";
 import { Row, Col, Card } from "react-bootstrap";
 import Link from "next/link";
 
-const index = ({ filmes }) => {
+const index = ({ filmes, filme }) => {
   return (
     <Pagina titulo="Filmes">
       <Row className="px-1 mx-1">
@@ -25,6 +25,10 @@ const index = ({ filmes }) => {
                     {new Date(item.release_date).toLocaleDateString()}
                   </strong>
                 </Card.Text>
+                <p>
+                  <strong>Nota: </strong>
+                  {item.vote_average.toFixed(1).replace(".", ",")}
+                </p>
                 {/* <OverlayTrigger
                   trigger="click"
                   placement="right"
@@ -54,7 +58,8 @@ export default index;
 export async function getServerSideProps(context) {
   const resultado = await apiFilmes.get(`/movie/popular/?language=pt-BR`);
   const filmes = await resultado.data.results;
+  const filme = await resultado.data;
   return {
-    props: { filmes }, // will be passed to the page component as props
+    props: { filmes, filme }, // will be passed to the page component as props
   };
 }

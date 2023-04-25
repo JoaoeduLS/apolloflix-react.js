@@ -5,10 +5,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Pagina = (props) => {
   return (<>
-    <div style={{backgroundColor:"black"}}>
+    <div style={{backgroundColor:"#212529"}}>
       <Cabecalho />
       <div
-        className="py-3 text-white text-center mb-2"
+        className="py-4 text-white text-center mb-2"
         style={{ backgroundColor: "orange" }}
       >
         <Container>
@@ -16,7 +16,6 @@ const Pagina = (props) => {
         </Container>
       </div>
       <Container className="mb-5 pb-3">{props.children}</Container>
-
       <div
         style={{ width: "100%", backgroundColor: "orange" }}
         className=" position-static bottom-0 py-2 text-black text-center"
