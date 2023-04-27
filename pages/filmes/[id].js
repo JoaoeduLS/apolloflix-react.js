@@ -3,6 +3,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import Pagina from "../../components/Pagina";
 import apiFilmes from "../../services/apiFilmes";
 import Link from "next/link";
+import Fotos from "../../components/Fotos";
 
 const Detalhes = ({ filme, atores }) => {
   return (
@@ -47,31 +48,8 @@ const Detalhes = ({ filme, atores }) => {
           </Card>
         </Col>
       </Row>
-      <h1 style={{ marginTop: 30, color: "white" }}>
-        <strong>Elenco</strong>
-      </h1>
-      <br />
-      <Row>
-        {atores.map((ator) => (
-          <Col key={ator.id} md={3} className="my-3">
-            <Link
-              href={`../ator/${ator.id}`}
-              style={{ textDecoration: "none" }}
-              className="text-black"
-            >
-              <Card className="p-1">
-                <Card.Img
-                  variant="top"
-                  src={`https://image.tmdb.org/t/p/w500/${ator.profile_path}`}
-                />
-                <Card.Title>
-                  <em>{ator.name}</em>
-                </Card.Title>
-              </Card>
-            </Link>
-          </Col>
-        ))}
-      </Row>
+
+      <Fotos titulo="Elenco" lista={atores} foto="poster_path" />
     </Pagina>
   );
 };

@@ -14,9 +14,9 @@ const Cabecalho = (props) => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <NavDropdown title="Categoria" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/filmes/terro">Terro</NavDropdown.Item>
-                <NavDropdown.Item href="#">Ação</NavDropdown.Item>
-                <NavDropdown.Item href="#">Aventura</NavDropdown.Item>
+                <NavDropdown.Item href="">Terro</NavDropdown.Item>
+                <NavDropdown.Item href="">Ação</NavDropdown.Item>
+                <NavDropdown.Item href="">Aventura</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="/filmes">Filmes</Nav.Link>
             </Nav>

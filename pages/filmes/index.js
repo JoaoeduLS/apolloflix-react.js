@@ -14,6 +14,7 @@ const index = ({ filmes, filme }) => {
             <Card>
               <Card.Img
                 variant="top"
+                style={{ Width: "100%", height: "100%" }}
                 src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
                 alt={item.title}
               />
